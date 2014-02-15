@@ -12,8 +12,8 @@ import models.StartEndTimes;
 import org.springframework.beans.factory.InitializingBean;
 
 import HelperFunctions.UrlCaller;
-import JsonReaders.ClassReader;
-import JsonReaders.DepartmentListReader;
+import JsonParsers.ClassReader;
+import JsonParsers.DepartmentListReader;
 
 public class OnStartup implements InitializingBean{
 	
