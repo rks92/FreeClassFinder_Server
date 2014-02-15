@@ -2,7 +2,7 @@ package sqlHandler;
 
 public class SQLMain {
 	SQLMain(){
-		//Create the tables
+		//Open the file
 	}
 	
 	//Function to fill the tables

@@ -1,7 +1,10 @@
 package controllers;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Set;
 import java.util.Vector;
 
@@ -10,6 +13,7 @@ import models.RoomTimesModel;
 import models.StartEndTimes;
 
 import org.springframework.beans.factory.InitializingBean;
+import org.sqlite.SQLite;
 
 import HelperFunctions.UrlCaller;
 import JsonReaders.ClassReader;
@@ -34,6 +38,16 @@ public class OnStartup implements InitializingBean{
 //				classListReaders.add(UrlCaller.getUrl(courseListingUrlBefore + dept+ courseListingUrlAfter));
 //				System.out.println("URL Called : " + courseListingUrlBefore + dept + courseListingUrlAfter);
 //			}
+			
+			Connection c = null;
+			try {
+				Class.forName("org.sqlite.JDBC");
+				c = DriverManager.getConnection("jdbc:sqlite:/Volumes/Data/Databases/ClassFinder/test.db");
+//				c = DriverManager.getConnection("/Volumes/Data/Databases/ClassFinder/jdbc:sqlite:test.db");
+			} catch (Exception e) {
+				System.err.println(e.getClass().getName() + ": " + e.getMessage());
+				System.exit(0);
+			}
 			
 			classListReaders.add(UrlCaller.getUrl(courseListingUrlBefore + "CS" + courseListingUrlAfter));
 			
