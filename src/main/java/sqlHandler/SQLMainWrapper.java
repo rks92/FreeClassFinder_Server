@@ -11,8 +11,11 @@ public class SQLMainWrapper {
 			Connection c = null;
 			try {
 				Class.forName("org.sqlite.JDBC");
-				c = DriverManager.getConnection("jdbc:sqlite:/Volumes/Data/Databases/ClassFinder/test.db");
-				this.c = c;
+//				c = DriverManager.getConnection("jdbc:sqlite:O:/Databases/ClassFinder/test.db");
+				c = DriverManager.getConnection("jdbc:sqlite:test.db");
+				System.out.println("here");
+
+				SQLMain.c = c;
 			} catch (Exception e) {
 				System.err.println(e.getClass().getName() + ": " + e.getMessage());
 				System.exit(0);
