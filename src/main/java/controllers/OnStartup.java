@@ -43,7 +43,7 @@ public class OnStartup implements InitializingBean{
 				AddToCurrentList(tempModel);
 			}
 			
-			SQLMain temp123 = new SQLMain();
+//			SQLMain temp123 = new SQLMain();
 			
 		} catch (IOException e) {
 			e.printStackTrace();
