@@ -8,14 +8,13 @@ public class SQLMainWrapper {
 	public static class SQLMain{
 		private static Connection c;
 		public SQLMain(){
-			Connection c = null;
 			try {
-				Class.forName("org.sqlite.JDBC");
-//				c = DriverManager.getConnection("jdbc:sqlite:O:/Databases/ClassFinder/test.db");
-				c = DriverManager.getConnection("jdbc:sqlite:test.db");
-				System.out.println("here");
+				System.out.println("* HERE *");
+				String url = "jdbc:postgresql://ec2-54-197-251-18.compute-1.amazonaws.com:5432/d8klq3too02ocd?user=dlgvbzmdiskear&password=OBvkdpAsV1d8I8xGju4DzBHXHd&ssl=true";
+				Connection conn = DriverManager.getConnection(url);
+				System.out.println("************** here ********** ");
 
-				SQLMain.c = c;
+				SQLMain.c = conn;
 			} catch (Exception e) {
 				System.err.println(e.getClass().getName() + ": " + e.getMessage());
 				System.exit(0);

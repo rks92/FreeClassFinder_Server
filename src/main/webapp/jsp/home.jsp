@@ -1,5 +1,5 @@
 <html>
-<h1>Hello Spring</h1>
+<h1>Class Finder</h1>
 
 <body>
 </body>

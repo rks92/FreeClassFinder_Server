@@ -11,6 +11,7 @@ import models.StartEndTimes;
 
 import org.springframework.beans.factory.InitializingBean;
 
+import sqlHandler.SQLMainWrapper.SQLMain;
 import HelperFunctions.UrlCaller;
 import JsonParsers.ClassReader;
 import JsonParsers.DepartmentListReader;
@@ -41,6 +42,8 @@ public class OnStartup implements InitializingBean{
 				Vector<ClassModel> tempModel = ClassReader.getClassDetails(this.classListReaders.elementAt(i));
 				AddToCurrentList(tempModel);
 			}
+			
+			SQLMain temp123 = new SQLMain();
 			
 		} catch (IOException e) {
 			e.printStackTrace();
